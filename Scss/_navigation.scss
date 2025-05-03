@@ -24,12 +24,12 @@ nav {
         transition: background-color 0.3s;
         text-align: center;
 
-        a:hover {
+        :hover {
           background-color: $nav-hover-bg;
           color: $text-color
         }
 
-        a.active {
+        .active {
           background-color: $nav-hover-bg;
           font-weight: bold;
           color: $text-color;
