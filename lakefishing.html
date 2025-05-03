@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Fishing</title>
+
+    <!-- Stylesheets for layout and design -->
+    <link rel="stylesheet" href="css/lakefishing.css">
+    <link rel="stylesheet" href="css/_navigation.css">
+    <link rel="stylesheet" href="css/_headerfooter.css">
+
+    <link rel="icon" type="image/x-icon" href="Images/Logo.svg">  <!-- Favicon for the website -->
+
+    <script src="js/lakefishing.js"></script> <!-- JS used for dynamic info loading -->
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Images/Logo.svg" alt="Adventure Holidays Logo">
+        </div>
+        <h1>Adventure Holidays</h1>
+    </header>
+
+    <main>
+        <!-- Highlighting active page in nav using class -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="walking.html">Walking</a></li>
+                <li><a href="lakefishing.html" class="active">Lake Fishing</a></li>
+                <li><a href="paragliding.html">Paragliding</a></li>
+                <li><a href="rockclimbing.html">Rock Climbing</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+
+            <div class="info-box" id="info-container">
+                <!-- Data gets populated from JS -->
+                <h2>Lake Fishing Adventures</h2>
+                <p>Loading information...</p>
+            </div>
+
+            <div class="itinerary" id="itinerary-container">
+                <h2>Itinerary</h2>
+                <div id="itinerary-content">Loading itinerary...</div>
+                <img src="images/lakefishing.jpg" alt="A peaceful lake used for fishing" class="img">
+            </div>
+
+            <div class="videocontainer">
+                <h2>Experience Lake Fishing</h2>
+                <p>Watch our video to get a glimpse of the adventure that awaits you!</p>
+                
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/uoTXmN9a0bU?si=Y7zG4otjVojBnYuj&amp;controls=0"
+                    title="Lake Fishing Video Preview"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="booking-option">
+                <h2>Book Your Fishing Adventure</h2>
+
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people">Number of People:</label>
+                        <input type="number" id="people" name="people" min="1" max="8" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Level">Experience:</label>
+                        <select id="Level" name="Level" required>
+                            <option value="">Select your Experience</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Seasoned">Seasoned</option>
+                            <option value="Experienced">Experienced</option>
+                        </select>
+                    </div>
+
+                    
+                    <button type="submit">Book Now</button>
+                </form>
+
+                <div id="availability">
+                    <!-- Availability results show up here -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; Adventure Holidays 2025
+    </footer>
+</body>
+
+</html>

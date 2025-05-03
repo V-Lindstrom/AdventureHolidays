@@ -1,0 +1,105 @@
+@use '_variables' as *;
+
+// Global reset 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Make sure layout fills screen
+html, body {
+  height: 100%;
+  overflow: hidden; // Note: Might remove later if scrolling is needed
+}
+
+body {
+  font-family: 'sansita', sans-serif;
+  background-color: $primary-bg;
+  color: $text-color;
+
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+
+    // Content container — kind of like the article wrapper
+    .content {
+      flex: 1;
+      display: grid;
+      gap: 15px;
+      padding: 25px;
+
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr 1fr;
+
+      // Generic text styling
+      h2 {
+        color: $text-color;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        font-family: 'tirobangla', sans-serif;
+        line-height: 1.4;
+      }
+
+      div {
+        background-color: $secondary-bg;
+        padding: 15px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        overflow-y: auto;
+      }
+
+      // Sections specifically
+      .holiday-info {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        // might tweak padding later if needed
+      }
+
+      .travel-article {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        padding: 15px;
+      }
+
+      // This is the link box thing
+      .article-link {
+        grid-column: 1 / 2;
+        grid-row: 2 / 2; // Technically correct, but a little weird
+
+        text-align: center;
+        align-content: center;
+
+        p {
+          text-decoration: none; // Might not do anything but let's keep it
+        }
+
+        // Yeah this naming was odd... moving the box styles here
+        .accommodation-box {
+          flex: 1;
+          min-height: 150px;
+          background-color: $secondary-bg;
+          text-align: center;
+          padding: 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: $text-color;
+          text-decoration: none;
+        }
+      }
+
+    } // end .content
+  } // end main
+} // end body

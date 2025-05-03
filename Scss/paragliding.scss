@@ -1,0 +1,127 @@
+@use '_variables' as *;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sansita', Arial, sans-serif; // Fallback included just to be safe
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-bg;
+}
+
+// MAIN STRUCTURE
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+    .content {
+        flex: 1;
+        display: grid;
+        padding: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 15px;
+        overflow: hidden;
+    }
+
+    // Info box up top — loads from the DB
+    .info-box {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        background-color: $secondary-bg;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-y: auto;
+    }
+
+    // Itinerary section, left column
+    .itinerary{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background-color: $secondary-bg;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-y: auto; // was previously 'hidden', but might have long content
+    }
+
+    // Booking form on the right
+    .booking-option {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        background-color: $primary-bg;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-y: auto;
+
+       
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    p {
+        font-family: 'tirobangla', sans-serif; 
+    }
+
+    .img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    form {
+        margin-top: 10px;
+
+        // Group spacing
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #ff8c00; // should we use a variable for this?
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 5px;
+
+            // Hover effect for better UX
+            &:hover {
+                background-color: #e67e00; // slightly darker on hover
+            }
+        }
+    }
+}
